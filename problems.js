@@ -52,4 +52,21 @@ function sameFrequency(int1, int2){
 // sameFrequency(22,222) // false
 
 
+// Frequency Counter / Multiple Pointers - areThereDuplicates
+// Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.  You can solve this using the frequency counter pattern OR the multiple pointers pattern.
+// areThereDuplicates(1, 2, 3) // false
+function areThereDuplicates() {
+    let counters = {};
+    let args = Array.from(arguments);
+    
+  for (let i = 0; i<args.length; i++) {
+      console.log(args[i])
+    if (counters[args[i]]) {
+      return (args, true);
+    } else {
+      counters[args[i]] = 1;
+    }
+  }
+  return false;
+}
 
