@@ -114,3 +114,11 @@ function findLongestSubstring(str) {
 // findLongestSubstring('longestsubstring') // 8
 // findLongestSubstring('thisishowwedoit') // 6
 // Time Complexity - O(n)
+
+//recursive basics
+function sumRange(num) {
+    if (num === 1) return 1;
+    return num + sumRange(num-1)
+}
+
+
