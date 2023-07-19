@@ -135,3 +135,24 @@ function factorial(num){
     if (num === 1) return 1;
     return num * factorial(num-1);
 }
+
+function reverse(str){
+  let newArr = []
+      // if(str.length === 1){
+      //     newArr.push(str[0])
+      // }
+      if(str.length === 1){
+          return str[0];
+      }
+      else{
+          newArr.push(str[str.length-1])
+      }
+      newArr = newArr.concat(reverse(str.slice(0,-1))) 
+      return newArr.join('');
+      
+  }
+  
+  function reverseSolution(str){
+    if(str.length <= 1) return str;
+    return reverseSolution(str.slice(1)) + str[0];
+  }
