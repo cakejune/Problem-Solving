@@ -156,3 +156,23 @@ function reverse(str){
     if(str.length <= 1) return str;
     return reverseSolution(str.slice(1)) + str[0];
   }
+
+  //recursive flattening
+  function flatten(...args){
+    let uniq = []
+        for(let i = 0; i < args.length; i++){
+    
+            if(Array.isArray(args[i])){
+                uniq = uniq.concat(flatten(...args[i]));
+            }
+            else{
+                uniq.push(args[i]);
+            }
+            
+        }
+    
+        return uniq;
+        
+    }
+    
+    // flatten([1,2,3], [[2]], [[3], 4])
