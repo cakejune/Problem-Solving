@@ -59,3 +59,37 @@ let capitalized = args[0].toUpperCase();
 return [capitalized].concat(capitalizeWords(args.slice(1)))
 
 }
+
+function collectStrings(obj){
+    
+    let arr = []
+        
+        for(let prop in obj){
+            if(typeof obj[prop] === 'string'){
+                arr.push(obj[prop])
+            }
+            else if(typeof obj[prop] === 'object' && !Array.isArray(obj[prop]) ){
+                arr = arr.concat(collectStrings(obj[prop]))
+            }
+        
+        }
+        return arr;
+    }
+    
+    var obj1 = {
+        stuff: "foo",
+        data: {
+            val: {
+                thing: {
+                    info: "bar",
+                    moreInfo: {
+                        evenMoreInfo: {
+                            weMadeIt: "baz"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // collectStrings(obj1) // ["foo", "bar", "baz"])
