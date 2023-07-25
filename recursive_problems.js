@@ -93,3 +93,58 @@ function collectStrings(obj){
     }
     
     // collectStrings(obj1) // ["foo", "bar", "baz"])
+
+    //Building Merge Sort
+    function merge(arr1, arr2){
+        let sorted = [];
+        let i = 0;
+        let j = 0;
+    
+        while(i < arr1.length && j < arr2.length){
+            if(arr1[i] < arr2[j]){
+                sorted.push(arr1[i])
+                i++;
+            }
+            else if(arr1[i] > arr2[j]){
+                sorted.push(arr2[j])
+                j++;
+            }
+            else if(arr1[i] === arr2[j]){
+                sorted.push(arr1[i], arr1[j]);
+                i++;
+                j++;
+            }
+        }
+    
+        while(i< arr1.length){
+            sorted.push(arr1[i])
+            i++;
+        }
+            while(j< arr2.length){
+            sorted.push(arr2[j])
+            j++;
+        }
+        
+        return sorted;
+        
+    }
+    
+    function mergeSort(arr){
+        if(arr.length <= 1){
+            return arr;
+        }
+    
+        let mid = Math.floor(arr.length/2)
+        let left = mergeSort(arr.slice(0, mid));
+        let right = mergeSort(arr.slice(mid));
+        return merge(left, right);
+        
+    }
+    
+    // mergeSort([1, 10, 23, 43, 22, 3])
+    
+    
+    // merge(sort1, sort2);
+        //==> [1, 2, 10, 14, 50, 99, 100]
+    
+    
