@@ -147,4 +147,20 @@ function collectStrings(obj){
     // merge(sort1, sort2);
         //==> [1, 2, 10, 14, 50, 99, 100]
     
-    
+        function binarySearch(arr, v){
+            let left = 0;
+            let right = arr.length-1;
+            while(right - left >= 2){
+                let m = Math.floor((right + left)/2)
+                if(arr[m] > v){
+                    right = m;
+                }
+                else if(arr[m] < v){
+                    left = m;
+                }
+                else if(arr[m] === v){
+                    return m;
+                }
+            }
+            return -1
+        }
