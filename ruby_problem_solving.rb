@@ -1,5 +1,3 @@
-# @param {Character[][]} board
-# @return {Boolean}
 require 'matrix'
 def is_valid_sudoku(board)
 
