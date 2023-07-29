@@ -44,3 +44,6 @@ def validate_row_uniq(one_row)
 
   false if no_periods.uniq.length != no_periods.length
 end
+
+
+#old solution
