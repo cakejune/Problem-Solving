@@ -44,3 +44,20 @@ def validate_row_uniq(one_row)
 
   false if no_periods.uniq.length != no_periods.length
 end
+
+def top_k_frequent(nums, k)
+    int_to_count_dict = {}
+    for i in nums do
+        if int_to_count_dict.include?(i)
+            int_to_count_dict[i] += 1
+        else
+            int_to_count_dict[i] = 1
+        end
+    end
+  new_hash = int_to_count_dict.max_by(k){|a,b| int_to_count_dict[a]}
+  final_order = []
+  new_hash.each do |count_array|
+    final_order << count_array[0]
+  end
+ return final_order
+end
