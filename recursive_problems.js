@@ -174,3 +174,19 @@ function fib(n){
     }
     return fib(n-2) + fib(n-1)
 }
+
+//THIS IS INCORRECT  - NEED TO FIX
+function reverseInteger(x) {
+    let isNeg = x < 0;
+    let xStr = Math.abs(x).toString();
+
+
+    if(xStr.length <= 1){
+        return x;
+    }
+
+    let result = (reverseInteger(xStr.slice(1)) + xStr.charAt(0)) * (isNeg ? -1 : 1);
+    return parseInt(result);
+};
+// unworking case
+// reverse(-901000)
