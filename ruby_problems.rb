@@ -61,3 +61,9 @@ def top_k_frequent(nums, k)
   end
  return final_order
 end
+
+def find_kth_largest(nums, k)
+  nums.sort!
+  nums[-k]
+  
+end
