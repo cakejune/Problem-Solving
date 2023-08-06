@@ -1,4 +1,6 @@
 require 'matrix'
+require 'set'
+
 def is_valid_sudoku(board)
 
   
@@ -67,3 +69,24 @@ def find_kth_largest(nums, k)
   nums[-k]
   
 end
+
+# sum of 3 integers must be 0. Not triplet can be repeated
+def three_sum(nums)
+
+  s1 = Set.new(nums)
+
+  for i in s1 do
+    for j in s1 do
+      for k in s1 do
+        if i + j + k == 0
+          puts [i, j, k]
+        end
+      end
+    end
+  end
+
+end
+
+three_sum([-1,0,1,2,-1,-4])
+# Input: nums = [-1,0,1,2,-1,-4]
+# Output: [[-1,-1,2],[-1,0,1]]
